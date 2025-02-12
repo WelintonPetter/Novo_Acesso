@@ -28,41 +28,31 @@ session_start();
                 <div class="scene">
                     <div class="sky">
                         <div class="sun"></div>
-                        <div class="clouds">
-                            <div class="cloud cloud1"></div>
-                            <div class="cloud cloud2"></div>
-                            <div class="cloud cloud3"></div>
-                        </div>
+                        <div class="cloud cloud1"></div>
+                        <div class="cloud cloud2"></div>
                     </div>
-                    <div class="city">
-                        <div class="buildings">
-                            <div class="building building1"></div>
-                            <div class="building building2"></div>
-                            <div class="building building3"></div>
-                        </div>
-                    </div>
-                    <div class="road-container">
+                    <div class="ground">
                         <div class="road">
-                            <div class="lines">
-                                <div class="line"></div>
-                                <div class="line"></div>
-                                <div class="line"></div>
-                            </div>
+                            <div class="road-line"></div>
                         </div>
-                        <div class="truck-container">
-                            <div class="truck">
-                                <div class="cabin"></div>
-                                <div class="cargo"></div>
-                                <div class="wheel front-wheel"></div>
-                                <div class="wheel back-wheel"></div>
-                            </div>
-                        </div>
-                        <div class="destination">
-                            <div class="house">
-                                <div class="roof"></div>
-                                <div class="body"></div>
-                                <div class="door"></div>
+                        <div class="house">
+                            <div class="house-body">
                                 <div class="window"></div>
+                                <div class="door"></div>
+                            </div>
+                            <div class="roof"></div>
+                            <div class="chimney"></div>
+                        </div>
+                        <div class="truck">
+                            <div class="truck-container">
+                                <div class="truck-body">
+                                    <div class="truck-cabin">
+                                        <div class="window-cabin"></div>
+                                    </div>
+                                    <div class="truck-back"></div>
+                                </div>
+                                <div class="wheel wheel1"></div>
+                                <div class="wheel wheel2"></div>
                             </div>
                         </div>
                     </div>
