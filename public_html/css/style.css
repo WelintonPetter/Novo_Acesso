@@ -1,0 +1,431 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.page-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.container {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.logo-container {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.logo-container i {
+    font-size: 50px;
+    color: #4A90E2;
+    background: #F0F7FF;
+    padding: 20px;
+    border-radius: 50%;
+}
+
+h1 {
+    color: #2c3e50;
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #7f8c8d;
+    margin-bottom: 30px;
+    font-size: 14px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.input-group {
+    position: relative;
+}
+
+.input-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #95a5a6;
+}
+
+input {
+    width: 100%;
+    padding: 15px 15px 15px 45px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    border-color: #4A90E2;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    background: #4A90E2;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+button:hover {
+    background: #357ABD;
+    transform: translateY(-2px);
+}
+
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.alert i {
+    font-size: 20px;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.alert-error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    color: #7f8c8d;
+    font-size: 14px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background: transparent;
+}
+
+/* Ajuste para evitar que o conteúdo fique sob o footer */
+.page-container {
+    padding-bottom: 60px; /* altura do footer + um pouco de espaço */
+}
+
+/* Ajuste para telas menores */
+@media (max-width: 480px) {
+    .container {
+        padding: 20px;
+        margin: 10px;
+    }
+    
+    .page-container {
+        padding: 10px;
+        padding-bottom: 60px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .logo-container i {
+        font-size: 40px;
+        padding: 15px;
+    }
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.container {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Animação do caminhão - versão profissional */
+.delivery-animation {
+    position: relative;
+    height: 200px;
+    margin: 30px 0;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.scene {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, #B5D8F7 0%, #B5D8F7 60%, #90A4AE 60%, #90A4AE 100%);
+}
+
+/* Céu e elementos */
+.sky {
+    position: absolute;
+    width: 100%;
+    height: 60%;
+    overflow: hidden;
+}
+
+.sun {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(to bottom right, #FFD700, #FFA500);
+    border-radius: 50%;
+    top: 20px;
+    right: 40px;
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.6);
+    animation: sunPulse 3s ease-in-out infinite;
+}
+
+.clouds {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.cloud {
+    position: absolute;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.cloud::before,
+.cloud::after {
+    content: '';
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+}
+
+.cloud1 {
+    width: 100px;
+    height: 30px;
+    top: 40px;
+    animation: moveCloud 20s linear infinite;
+}
+
+.cloud1::before {
+    width: 35px;
+    height: 35px;
+    top: -20px;
+    left: 10px;
+}
+
+.cloud1::after {
+    width: 45px;
+    height: 45px;
+    top: -25px;
+    left: 40px;
+}
+
+/* Cidade no fundo */
+.city {
+    position: absolute;
+    bottom: 40%;
+    width: 100%;
+    height: 60px;
+}
+
+.buildings {
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+}
+
+.building {
+    background: #546E7A;
+    width: 40px;
+    height: 100%;
+    position: relative;
+}
+
+.building::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 10px;
+    background: #455A64;
+    top: -10px;
+}
+
+/* Caminhão estilizado */
+.truck {
+    position: relative;
+    width: 80px;
+    height: 40px;
+}
+
+.cabin {
+    position: absolute;
+    width: 30px;
+    height: 25px;
+    background: #1976D2;
+    border-radius: 5px 5px 0 0;
+    bottom: 0;
+    left: 0;
+}
+
+.cargo {
+    position: absolute;
+    width: 45px;
+    height: 35px;
+    background: #2196F3;
+    border-radius: 2px;
+    bottom: 0;
+    right: 0;
+}
+
+.wheel {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: #333;
+    border-radius: 50%;
+    bottom: -6px;
+    border: 2px solid #666;
+    animation: rotateWheel 1s linear infinite;
+}
+
+.front-wheel { left: 10px; }
+.back-wheel { right: 15px; }
+
+/* Casa estilizada */
+.house {
+    position: relative;
+    width: 60px;
+    height: 50px;
+}
+
+.roof {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-bottom: 20px solid #37474F;
+    top: -20px;
+}
+
+.body {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #455A64;
+    border-radius: 2px;
+}
+
+.door {
+    position: absolute;
+    width: 20px;
+    height: 30px;
+    background: #37474F;
+    bottom: 0;
+    left: 20px;
+    border-radius: 2px 2px 0 0;
+}
+
+.window {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: #90A4AE;
+    top: 10px;
+    left: 10px;
+    border-radius: 2px;
+}
+
+/* Animações refinadas */
+@keyframes sunPulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.1); opacity: 0.9; }
+}
+
+@keyframes moveCloud {
+    from { transform: translateX(-150px); }
+    to { transform: translateX(calc(100% + 150px)); }
+}
+
+@keyframes rotateWheel {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.truck-container {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    animation: moveTruck 8s ease-in-out infinite;
+}
+
+@keyframes moveTruck {
+    0% { transform: translateX(-100px); }
+    40% { transform: translateX(calc(100% - 200px)); }
+    45% { transform: translateX(calc(100% - 200px)); }
+    85% { transform: translateX(-100px); }
+    100% { transform: translateX(-100px); }
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+    .delivery-animation {
+        height: 150px;
+    }
+    
+    .sun {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .truck {
+        transform: scale(0.8);
+    }
+    
+    .house {
+        transform: scale(0.8);
+    }
+} 
