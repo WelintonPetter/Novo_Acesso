@@ -59,7 +59,7 @@ session_start();
                 </div>
             </div>
             
-            <h1>Controle de Acesso</h1>
+            <h1>Controle de Entregas</h1>
             <p class="subtitle">Digite seu código de rastreamento ou nota fiscal</p>
             
             <?php if (isset($message)): ?>
